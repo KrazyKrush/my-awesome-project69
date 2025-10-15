@@ -1,0 +1,347 @@
+:root {
+  --color-bg: #f0f0f0;
+  --color-fg: #000000;
+  --color-muted: #555555;
+  --color-primary: #222222;
+  --color-danger: #b00020;
+  --font-body: "Courier New", monospace;
+  --font-headings: "Bebas Neue", "Impact", sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --radius: 0;
+  --shadow: 2px 2px 0 #000, 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  line-height: 1.4;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(1) contrast(1.1);
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:disabled, [aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(100% - 2 * var(--space-4), 1120px);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.site-header {
+  background: #000;
+  color: #fff;
+  padding: var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #fff, #fff 10px, transparent 10px, transparent 20px);
+}
+
+.site-header__brand {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: var(--shadow);
+}
+
+.site-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.site-nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: var(--space-1) var(--space-2);
+  position: relative;
+}
+
+.site-nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.breadcrumbs {
+  margin-bottom: var(--space-4);
+  color: var(--color-muted);
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  padding-block: var(--space-5);
+}
+
+.section {
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  background-color: white;
+  border: 2px solid black;
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid black;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section__title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-headings);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #ccc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form__label {
+  display: block;
+  margin: var(--space-2) 0 var(--space-1);
+  font-family: var(--font-headings);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form__control {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid black;
+  background: white;
+  color: black;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  position: relative;
+}
+
+.form__control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.form__control[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.form__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.form__help {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  margin-top: var(--space-1);
+}
+
+.modal {
+  padding: var(--space-4);
+  border: 2px solid black;
+  background: white;
+  width: min(92vw, 520px);
+  position: relative;
+}
+
+.modal::before {
+  content: "CONFIDENTIAL";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-headings);
+  font-size: 0.8rem;
+  color: red;
+  transform: rotate(15deg);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid black;
+  background: white;
+  color: black;
+  font-family: var(--font-headings);
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 black;
+}
+
+.btn--secondary {
+  background: #f0f0f0;
+}
+
+.hero {
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
+    url("https://placehold.co/1200x400/000000/ffffff?text=JOEY+DREW+STUDIOS") center / cover no-repeat;
+  color: white;
+  padding: clamp(2rem, 6vw, 6rem) 1rem;
+  text-align: center;
+  margin-bottom: var(--space-5);
+  border: 2px solid white;
+  position: relative;
+}
+
+.hero::after {
+  content: "EST. 1929";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: var(--font-headings);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero__title {
+  font-family: var(--font-headings);
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.project-card__img {
+  width: auto;
+  height: 120px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  filter: grayscale(1) contrast(1.2) brightness(0.95);
+  object-fit: contain;
+}
+
+.media {
+  aspect-ratio: 16 / 9;
+  width: min(100%, 960px);
+  margin-inline: auto;
+}
+
+.media iframe,
+.media video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: var(--space-3);
+  margin-top: var(--space-5);
+  border-top: 4px solid white;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}

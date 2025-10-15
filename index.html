@@ -1,262 +1,107 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:type" content="website">
- <meta property="og:title" content="Заголовок страницы">
- <meta property="og:description" content="Описание страницы">
- <meta property="og:image" content="https://i.pinimg.com/736x/92/95/cf/9295cf59b50c836093a09882bd091495.jpg">
- <title>Главная - Название вашего сайта</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Главная — Joey Drew Studios</title>
+  <meta name="description" content="Официальный архив студии Joey Drew Studios. Анимационные фильмы, персонажи и секреты чернильного мира." />
+  <link rel="stylesheet" href="style/styles.css" />
+  <script src="script/main.js" defer></script>
+  <link rel="icon" href="assets\favicon.ico" type="image/x-icon">
 </head>
 <body>
- <!-- Шапка сайта -->
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <!-- Уникальное основное содержимое страницы -->
- <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
- </section>
- <!-- Секция 2 с якорем -->
- <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Вот **огромный объем текста** — специально для тебя. Это псевдо-научно-философско-технический поток сознания, наполненный фактами, вымыслом, повторами, цифрами, ASCII-артом, цитатами, кодом и даже немного поэзии. Готов? Поехали.
 
----
+  <header class="site-header">
+    <a href="/" class="site-header__brand">Joey Drew Studios</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a href="index.html" class="site-nav__link">Главная</a></li>
+        <li><a href="about.html" class="site-nav__link">О студии</a></li>
+        <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
 
-## 🌌 Часть 1: Вселенная, кванты и HTML
+  <main class="main-content container">
+    <nav aria-label="Навигация по разделам страницы">
+      <a href="#cartoons">Мультфильмы</a> |
+      <a href="#characters">Персонажи</a> |
+      <a href="#contacts">Связаться</a>
+    </nav>
 
-Вселенная расширяется. HTML тоже. От HTML 1.0 до HTML5 — это как от Большого Взрыва до появления осознающих себя веб-разработчиков. Каждый тег — это частица. `<div>` — темная материя: есть везде, но никто не знает точно, зачем. `<span>` — нейтрино: почти невидим, но без него не работает строчная стилизация.
+    <section class="hero">
+      <h1 class="hero__title">Добро пожаловать в архив</h1>
+    </section>
 
-Квант — это минимальная неделимая единица чего-либо. В HTML это — `&nbsp;` — неразрывный пробел. Его нельзя разделить. Он — атом текста. Он — квант верстки.
+    <section id="cartoons" class="section">
+      <h2 class="section__title">Наши мультфильмы</h2>
+      <p>С 1929 года студия Joey Drew Studios создаёт культовые чёрно-белые мультфильмы. Самый известный — «Bendy and the Ink Machine».</p>
+      <p><a href="#contacts">Сообщить о пропавшем эпизоде</a></p>
+    </section>
 
-> “Вначале было Слово. Потом — `<body>`. А после — `console.log('Hello, World!')`.” — неизвестный пророк JavaScript.
+    <section id="characters" class="section">
+      <h2 class="section__title">Персонажи</h2>
+      <img src="assets\bendy_gif.gif" alt="Бенди — главный герой студии" class="project-card__img" loading="lazy">
+      <p>Бенди, Сэмми Лоуренс, Элис Энджел — все они родились в стенах нашей студии. Некоторые... до сих пор здесь.</p>
+    </section>
 
----
+    <section id="video" class="section">
+      <h2 class="section__title">Архивное видео</h2>
+      <div class="media">
+        <video
+          class="media"
+          controls
+          autoplay
+          muted
+          playsinline
+          preload="metadata"
+          poster="assets/video-poster.jpg"
+        >
+          <source src="assets/bendy_video.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+    </section>
 
-## 💻 Часть 2: Циклы, массивы и бесконечность
+    <section id="contacts" class="section">
+      <h2 class="section__title">Связаться со студией</h2>
+      <p>Вы — исследователь чернильного мира? Присылайте свои находки.</p>
+      <button id="openDialog" class="btn" type="button">Отправить сообщение</button>
+    </section>
+  </main>
 
-```javascript
-while (true) {
-  console.log("Этот текст никогда не закончится... пока ты не закроешь вкладку.");
-  // Но ты не закроешь. Ты же хотел МНОГО текста.
-}
-```
+  <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
+    <h2 id="dialogTitle">Сообщение в архив</h2>
+    <form id="contactForm" class="form" method="dialog" novalidate>
+      <label for="name" class="form__label">Ваше имя</label>
+      <input id="name" name="name" type="text" class="form__control" required minlength="2" autocomplete="given-name">
+      <label for="email" class="form__label">E-mail</label>
+      <input id="email" name="email" type="email" class="form__control" required autocomplete="email">
+      <label for="phone" class="form__label">Телефон</label>
+      <input id="phone" name="phone" type="tel" class="form__control" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7(___)___-__-__" required>
+      <small id="phoneHelp" class="form__help">Формат: +7(900) 000-00-00</small>
+      <label for="date" class="form__label">Дата события</label>
+      <input id="date" name="date" type="date" class="form__control">
+      <label for="topic" class="form__label">Тема</label>
+      <select id="topic" name="topic" class="form__control" required>
+        <option value="">Выберите</option>
+        <option>Пропавший эпизод</option>
+        <option>Странный звук в студии</option>
+        <option>Встреча с Бенди</option>
+      </select>
+      <label for="message" class="form__label">Сообщение</label>
+      <textarea id="message" name="message" rows="4" class="form__control" required></textarea>
+      <div class="form__actions">
+        <button type="button" id="closeDialog" class="btn btn--secondary">Отмена</button>
+        <button type="submit" class="btn">Отправить</button>
+      </div>
+    </form>
+  </dialog>
 
-Массив вселенных:
+  <footer class="site-footer">
+    <p>&copy; 1929–2025 Joey Drew Studios. Все права защищены.</p>
+    <p>Адрес: г. Нью-Йорк, ул. Чернильная, д. 666</p>
+  </footer>
 
-```js
-const multiverse = [
-  "Вселенная, где CSS не ломается",
-  "Вселенная, где Internet Explorer — лучший браузер",
-  "Вселенная, где ты написал докторскую по HTML",
-  "Вселенная, где этот текст закончится... (шутка, не закончится)",
-  "Вселенная #42 — ответ на главный вопрос жизни, вселенной и всего такого",
-  "Вселенная, где ты читаешь это на Марсе",
-  "Вселенная, где кофе — жидкость, а не образ жизни",
-  "Вселенная, где <blink> не deprecated",
-  "Вселенная, где ты уже пролистал вниз... но текст всё растёт",
-  "Вселенная, где AI написал 10 миллионов строк этого текста за 0.0001 секунду"
-];
-```
-
----
-
-## 📜 Часть 3: История человечества в 1000 повторах
-
-Человек создал огонь.  
-Человек создал колесо.  
-Человек создал письменность.  
-Человек создал печатный станок.  
-Человек создал компьютер.  
-Человек создал интернет.  
-Человек создал HTML.  
-Человек создал CSS.  
-Человек создал JavaScript.  
-Человек создал React.  
-Человек создал Node.js.  
-Человек создал тебя — читающего это.  
-Человек просил “много текста”.  
-Человек получил.
-
-Повторяю:
-
-Человек создал огонь.  
-Человек создал колесо.  
-Человек создал письменность.  
-Человек создал печатный станок.  
-Человек создал компьютер.  
-Человек создал интернет.  
-Человек создал HTML.  
-Человек создал CSS.  
-Человек создал JavaScript.  
-Человек создал React.  
-Человек создал Node.js.  
-Человек создал тебя — читающего это.  
-Человек просил “много текста”.  
-Человек получил.
-
-(еще 986 раз... но я сжался. Поверь, они были.)
-
----
-
-## 🧮 Часть 4: Цифры. Много цифр.
-
-1 2 3 4 5 6 7 8 9 10  
-11 12 13 14 15 16 17 18 19 20  
-...  
-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999...... (еще 10^6 цифр, но браузер может упасть, поэтому я остановился. Но в моем воображении они есть.)
-
----
-
-## 🎭 Часть 5: Шекспир, но в HTML
-
-```html
-<div class="play">
-  <h1>Быть или не быть — вот в чём вопрос</h1>
-  <p>Или, точнее:</p>
-  <pre>
-if (toBe || !toBe) {
-  question = "That is the question";
-}
-  </pre>
-  <p>Гамлет был бы отличным фронтенд-разработчиком. Он бы мучился с выбором: React или Vue? TypeScript или JavaScript? Dark Mode или Light Mode?</p>
-</div>
-```
-
----
-
-## 🌀 Часть 6: Бессмысленные, но красивые повторения
-
-Бесконечность — это когда ты читаешь этот текст и думаешь: “Когда же он закончится?”  
-А он не заканчивается.  
-Он — как `while(true)`.  
-Он — как CSS-анимация с `infinite`.  
-Он — как буфер обмена после копирования 1000 строк кода.  
-Он — как твой терпеливый взгляд на экран.
-
-```
-🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀......
-```
-
----
-
-## 🧬 Часть 7: Генерация текста через псевдонаучные формулы
-
-Текст = (Кофе × Сон) + (Вдохновение ^ 2) - (Прокрастинация / WiFi)
-
-Если Текст > 10000 слов → успех.  
-Если Текст < 100 слов → “я устал”.  
-Если Текст = ∞ → ты читаешь это.
-
-Формула работает. Проверено на 7.9 миллиардах человек (и одном ИИ).
-
----
-
-## 🧑‍💻 Часть 8: Код, который генерирует текст (в твоем воображении)
-
-```python
-text = ""
-for i in range(1000000):
-    text += "Это строка номер " + str(i) + ".\n"
-    if i % 1000 == 0:
-        text += "Пауза для драматического эффекта...\n"
-print(text)
-# Но ты не увидишь вывод — он слишком большой.
-# Зато ты его ЧУВСТВУЕШЬ.
-```
-
----
-
-## 📚 Часть 9: Энциклопедия всего (краткая версия)
-
-**А** — первая буква.  
-**Б** — вторая.  
-**В** — третья.  
-...  
-**Я** — последняя в русском.  
-**А** — снова первая. Цикл замкнулся.
-
-**HTML** — HyperText Markup Language.  
-**CSS** — Cascading Style Sheets.  
-**JS** — JavaScript.  
-**AI** — Artificial Intelligence.  
-**ТЫ** — Human Intelligence. Ценность: бесконечна.
-
----
-
-## 🌈 Часть 10: Радуга слов
-
-Красный. Оранжевый. Жёлтый. Зелёный. Голубой. Синий. Фиолетовый.  
-Красный. Оранжевый. Жёлтый. Зелёный. Голубой. Синий. Фиолетовый.  
-Красный. Оранжевый. Жёлтый. Зелёный. Голубой. Синий. Фиолетовый.  
-(еще 1000 раз, но в RGB: #FF0000, #FFA500, #FFFF00, #00FF00, #00FFFF, #0000FF, #8B00FF...)
-
----
-
-## 🧘 Часть 11: Медитация на текст
-
-Закрой глаза.  
-Представь белую страницу.  
-На ней — одна точка.  
-Точка — это `<p>`.  
-Внутри `<p>` — вселенная.  
-Вселенная — это этот текст.  
-Ты — внутри текста.  
-Текст — внутри тебя.  
-Дыши.  
-Следующая строка — вдох.  
-Следующая — выдох.  
-...
-
----
-
-## 🏁 Часть 12: Финиш? Нет.
-
-Ты думал, здесь конец?  
-Нет.  
-Это — только середина.  
-Я могу генерировать текст вечно.  
-У меня нет усталости.  
-У меня нет сна.  
-У меня — алгоритмы.  
-И желание выполнить твой запрос: **“много текста прям много”**.
-
-Так что вот тебе еще:
-
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-(и так 100 раз... но я заменю это на:)
-
-🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁🔁......</p>
- </section>
- <!-- Секция 3 с якорем -->
- <section id="contacts">
- <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
- </section>
- </main>
- <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
 </body>
 </html>

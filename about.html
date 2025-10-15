@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:type" content="website">
- <meta property="og:title" content="Здесь вы можете узнать пару слов о нас..">
- <meta property="og:description" content="Хрю-хрю">
- <meta property="og:image" content="https://i.pinimg.com/736x/92/95/cf/9295cf59b50c836093a09882bd091495.jpg">
- <title>О нас - Название вашего сайта</title>
- <meta name="description" content="Узнайте больше о нашей компании и истории">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О студии — Joey Drew Studios</title>
+  <meta name="description" content="История создания Joey Drew Studios, ключевые фигуры и тайны, скрытые в архивах." />
+  <link rel="stylesheet" href="style/styles.css" />
+  <script src="script/main.js" defer></script>
+  <link rel="icon" href="assets\favicon.ico" type="image/x-icon">
 </head>
 <body>
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>О нас</span>
- </nav>
- <h1>О нашей компании</h1>
- <section>
- <h2>Наша история</h2>
- <p>Текст о том, как все начиналось...</p>
- </section>
- <section>
- <h2>Наша команда</h2>
- <p>Текст о команде...</p>
- </section>
- </main>
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+
+  <header class="site-header">
+    <a href="/" class="site-header__brand">Joey Drew Studios</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a href="index.html" class="site-nav__link">Главная</a></li>
+        <li><a href="about.html" class="site-nav__link">О студии</a></li>
+        <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content container">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a> → <span>О студии</span>
+    </nav>
+
+    <h1 class="section__title">О студии</h1>
+
+    <section class="section">
+      <h2 class="section__title">История</h2>
+      <p>Joey Drew Studios была основана в 1929 году Джоуи Дрю и Хенри Стимботтом. Студия быстро стала лидером в области анимации, но в 1940-х внезапно закрылась. Причины до сих пор неизвестны.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Легенды</h2>
+      <p>Говорят, что некоторые анимационные персонажи... не хотели покидать студию. Особенно Бенди. Ночью в здании слышны шаги и смех.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 1929–2025 Joey Drew Studios. Все права защищены.</p>
+    <p>Адрес: г. Нью-Йорк, ул. Чернильная, д. 666</p>
+  </footer>
+
 </body>
 </html>
