@@ -74,7 +74,16 @@ img, video, iframe {
   gap: var(--space-3);
   position: relative;
 }
+.header-container {
+  display: flex;
+  align-items: center; /* выравнивание по вертикали */
+  gap: 16px; /* отступ между заголовком и изображением */
+}
 
+.project-card__img {
+  max-height: 48px; /* ограничьте высоту, чтобы не выглядело громоздко */
+  width: auto;
+}
 .site-header::after {
   content: "";
   position: absolute;
@@ -82,7 +91,7 @@ img, video, iframe {
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(90deg, #fff, #fff 10px, transparent 10px, transparent 20px);
+  background: repeating-linear-gradient(90deg, #000000, #000000 10px, transparent 10px, transparent 20px);
 }
 
 .site-header__brand {
